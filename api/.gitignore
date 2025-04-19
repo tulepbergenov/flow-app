@@ -128,11 +128,3 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-
-# web
-web/node_modules
-web/build
-
-# api
-api/node_modules
-api/build
