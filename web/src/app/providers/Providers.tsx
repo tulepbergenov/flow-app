@@ -1,14 +1,15 @@
-import { Suspense } from "react";
 import { Outlet } from "react-router";
+
+import { ErrorBoundary } from "@/components";
 
 import { AntDesignProvider } from "./components";
 
 export const Providers = () => {
   return (
     <AntDesignProvider>
-      <Suspense fallback={<div>Loading...</div>}>
+      <ErrorBoundary>
         <Outlet />
-      </Suspense>
+      </ErrorBoundary>
     </AntDesignProvider>
   );
 };
