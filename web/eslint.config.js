@@ -1,5 +1,6 @@
 import js from "@eslint/js";
 import eslintParserHTML from "@html-eslint/parser";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import perfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
@@ -10,6 +11,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config([
+  ...pluginQuery.configs["flat/recommended"],
   eslintConfigPrettier,
   eslintPluginPrettierRecommended,
   {

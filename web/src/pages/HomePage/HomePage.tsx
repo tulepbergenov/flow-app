@@ -1,11 +1,13 @@
+import { Typography } from "antd";
+
 import { usePageTitle } from "@/shared/hooks";
 
 const HomePage = () => {
-  usePageTitle("Home");
+  usePageTitle();
 
   return (
     <section>
-      <h1>HomePage</h1>
+      <Typography.Title level={1}>HomePage</Typography.Title>
     </section>
   );
 };

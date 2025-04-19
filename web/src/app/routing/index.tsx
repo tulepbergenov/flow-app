@@ -1,11 +1,10 @@
-import { Suspense } from "react";
 import { createBrowserRouter } from "react-router";
 
 import { HomePage, NotFoundPage } from "@/pages";
 
 import { AppLayout } from "../layouts";
 import { Providers } from "../providers";
-import { PageFallback } from "./components";
+import { withSuspense } from "./libs";
 
 export const router = createBrowserRouter([
   {
@@ -16,27 +15,15 @@ export const router = createBrowserRouter([
         children: [
           {
             path: "/",
-            element: (
-              <Suspense fallback={<PageFallback />}>
-                <HomePage />
-              </Suspense>
-            ),
+            element: withSuspense(<HomePage />),
           },
           {
             path: "*",
-            element: (
-              <Suspense fallback={<PageFallback />}>
-                <NotFoundPage />
-              </Suspense>
-            ),
+            element: withSuspense(<NotFoundPage />),
           },
           {
             path: "/not-found",
-            element: (
-              <Suspense fallback={<PageFallback />}>
-                <NotFoundPage />
-              </Suspense>
-            ),
+            element: withSuspense(<NotFoundPage />),
           },
         ],
       },

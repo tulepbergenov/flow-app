@@ -1,3 +1,5 @@
+import { Typography } from "antd";
+
 import { usePageTitle } from "@/shared/hooks";
 
 const NotFoundPage = () => {
@@ -5,7 +7,7 @@ const NotFoundPage = () => {
 
   return (
     <section>
-      <h1>NotFoundPage</h1>
+      <Typography.Title level={1}>NotFoundPage</Typography.Title>
     </section>
   );
 };
