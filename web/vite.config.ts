@@ -1,11 +1,18 @@
 import react from "@vitejs/plugin-react-swc";
+import path from "path";
 import { defineConfig } from "vite";
+import { createHtmlPlugin } from "vite-plugin-html";
 
 const PORT = 4000;
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    createHtmlPlugin({
+      minify: true,
+    }),
+  ],
   build: {
     outDir: "build",
   },
@@ -18,5 +25,10 @@ export default defineConfig({
     port: PORT,
     host: true,
     open: true,
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
   },
 });
