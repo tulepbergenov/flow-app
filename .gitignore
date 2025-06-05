@@ -131,3 +131,4 @@ dist
 
 # builds
 web/node_modules
+web/build
