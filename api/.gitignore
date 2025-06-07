@@ -130,7 +130,4 @@ dist
 .pnp.*
 
 # builds
-web/node_modules
-web/build
-api/node_modules
-api/build
+build
